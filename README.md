@@ -1,4 +1,4 @@
-# ADESCO Sistema Administrativo - Fase 1 (Frontend Estático)
+# Sistema de Servicio de Agua Potable ADESCO - Fase 1 (Frontend Estático)
 
 ## Cómo levantar el sitio localmente
 
