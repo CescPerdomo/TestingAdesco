@@ -27,26 +27,26 @@ http://localhost:8000/auth.html (o la url configurada)
 
 ---
 
-## Estructura de Archivos
+## Estructura de Archivos 
 
 - `auth.html` - Pantalla de login.
-- `dashboard.html` - Panel principal con KPIs y gráfica.
+- `dashboard.html` - Panel principal con gráficas.
 - `pagos.html` - Gestión de pagos y facturas.
 - `usuarios.html` - CRUD de usuarios.
 - `reportes.html` - Reportes con filtros y exportación.
-- `404.html` y `500.html` - Páginas de error personalizadas.
-- `assets/css/style.css` - Estilos personalizados y variables.
-- `assets/js/app.js` - Lógica jQuery, validaciones y mocks Ajax.
+- `404.html` y `500.html` - Páginas de error personalizadas.(a criterio del desarrollador)
+- `assets/css/style.css` - Estilos personalizados y variables. (modificar a criterio del desarrollador)
+- `assets/js/app.js` - Lógica jQuery, validaciones y mocks Ajax. (validaciones simples)
 - `assets/img/` - Imágenes y logos.
 
 ---
 
 ## Notas
 
-- El código está preparado para integrarse con Laravel en la Fase 2.
-- Se usan comentarios Blade-friendly para facilitar la migración.
+- El código está preparado para integrarse con Laravel en la Fase 2. (a criterio del desarrollador)
+- Se usan comentarios Blade-friendly para facilitar la migración. (a criterio del desarrollador)
 - Las tablas usan DataTables y los selects usan Select2 con datos simulados.
 - La gráfica usa Chart.js con datos ficticios.
-- Se prioriza accesibilidad y rendimiento según WCAG AA y Lighthouse.
+- Se prioriza accesibilidad y rendimiento según WCAG AA y Lighthouse. (pautas de accesiblidad opcionales)
 
 ---
