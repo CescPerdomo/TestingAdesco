@@ -2,11 +2,11 @@
 
 ## Cómo levantar el sitio localmente
 
-1. Asegúrate de tener Python 3 instalado para usar el servidor HTTP simple.
+1. Tener instalado Nodejs (recomendado) para usar el servidor HTTP simple.
 
-2. En la terminal, navega a la carpeta raíz del proyecto donde están los archivos HTML.
+2. En la terminal, navega a la carpeta raíz del proyecto donde están los archivos HTML, ingresa el comando y ejecutar.
 
-3. Opciones de despliegue como el siguiente comando para iniciar un servidor local en el puerto 8000:
+3. Opciones de despliegue como los siguientes comandos para iniciar un servidor local en el puerto 8000:
 
 ```bash
 Nodejs : npx http-server -p 8000 o npx serve -l 8000 o tambien npx live-server --port=8000 luego abre http://localhost:8000
