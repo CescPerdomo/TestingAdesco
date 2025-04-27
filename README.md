@@ -20,7 +20,7 @@ python3 -m http.server 8000
 4. Abre tu navegador y visita:
 
 ```
-http://localhost:8000/auth.html
+http://localhost:8000/auth.html (o la url configurada)
 ```
 
 5. Navega entre las páginas usando los enlaces o modificando la URL para ver las diferentes pantallas.
