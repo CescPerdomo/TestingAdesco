@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
   <link rel="stylesheet" href="public/assets/css/style.css" />
-  {{-- TODO: sustituir por @csrf --}}
+  
 </head>
 <body class="d-flex align-items-center justify-content-center vh-100" style="background-color: var(--color-background); font-family: 'Inter', sans-serif;">
   <main class="card p-4 shadow-sm" style="width: 100%; max-width: 400px;">
@@ -16,7 +16,7 @@
       <img src="public/assets/img/logo-adesco.png" alt="Logo ADESCO" class="img-fluid" style="max-height: 80px;" />
     </div>
     <form id="registerForm" method="POST" action="{{ route('register.store') }}" novalidate>
-      @csrf
+     
       <div class="mb-3">
         <label for="nombre" class="form-label fw-semibold">Nombre completo</label>
         <input type="text" id="nombre" name="nombre" class="form-control" required aria-describedby="nombreError" />
@@ -37,7 +37,7 @@
         <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" required aria-describedby="confirmPasswordError" />
         <div id="confirmPasswordError" class="form-text text-danger error-message" role="alert" aria-live="polite"></div>
       </div>
-      <button type="submit" class="btn btn-primary w-100 transition-smooth">Registrarse</button>
+      <button type="submit" class="btn btn-primary w-100 transition-smooth" onclick="location.href='dashboard.html'">Registrarse</button>
     </form>
   </main>
 
