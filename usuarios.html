@@ -9,8 +9,8 @@
   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-  {{-- TODO: sustituir por @csrf en Fase 2 --}}
+  <link rel="stylesheet" href="public/assets/css/style.css" />
+  {{-- TODO: sustituir por @csrf --}}
 </head>
 <body class="d-flex flex-column vh-100" style="font-family: 'Inter', sans-serif; background-color: var(--color-background);">
   <!-- Navbar -->
@@ -50,7 +50,7 @@
     <main class="flex-grow-1 p-4" style="overflow-y: auto;">
       <h1 class="mb-4">Usuarios</h1>
 
-      <button type="button" class="btn btn-primary btn-adesco--outline mb-3" data-bs-toggle="modal" data-bs-target="#usuarioModal">
+      <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#usuarioModal">
         <i class="bi bi-plus-lg me-1"></i> Crear Usuario
       </button>
 
@@ -69,10 +69,10 @@
             <td>ana.martinez@example.com</td>
             <td>Admin</td>
             <td>
-              <button class="btn btn-sm btn-primary btn-adesco--outline me-1" data-bs-toggle="modal" data-bs-target="#usuarioModal" aria-label="Editar usuario Ana Martínez">
+              <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#usuarioModal" aria-label="Editar usuario Ana Martínez">
                 <i class="bi bi-pencil"></i>
               </button>
-              <button class="btn btn-sm btn-danger btn-adesco--outline" aria-label="Eliminar usuario Ana Martínez">
+              <button class="btn btn-sm btn-danger" aria-label="Eliminar usuario Ana Martínez">
                 <i class="bi bi-trash"></i>
               </button>
             </td>
@@ -82,10 +82,10 @@
             <td>carlos.ruiz@example.com</td>
             <td>Cajero</td>
             <td>
-              <button class="btn btn-sm btn-primary btn-adesco--outline me-1" data-bs-toggle="modal" data-bs-target="#usuarioModal" aria-label="Editar usuario Carlos Ruiz">
+              <button class="btn btn-sm btn-primary me-1" data-bs-toggle="modal" data-bs-target="#usuarioModal" aria-label="Editar usuario Carlos Ruiz">
                 <i class="bi bi-pencil"></i>
               </button>
-              <button class="btn btn-sm btn-danger btn-adesco--outline" aria-label="Eliminar usuario Carlos Ruiz">
+              <button class="btn btn-sm btn-danger" aria-label="Eliminar usuario Carlos Ruiz">
                 <i class="bi bi-trash"></i>
               </button>
             </td>
@@ -96,7 +96,8 @@
       <!-- Modal Crear / Editar Usuario -->
       <div class="modal fade" id="usuarioModal" tabindex="-1" aria-labelledby="usuarioModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-          <form id="usuarioForm" class="modal-content">
+          <form id="usuarioForm" class="modal-content" method="POST" action="{{ route('users.store') }}">
+            @csrf
             <div class="modal-header">
               <h5 class="modal-title" id="usuarioModalLabel">Crear / Editar Usuario</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
@@ -104,15 +105,15 @@
             <div class="modal-body">
               <div class="mb-3">
                 <label for="nombreUsuario" class="form-label">Nombre</label>
-                <input type="text" id="nombreUsuario" class="form-control" required />
+                <input type="text" id="nombreUsuario" name="name" class="form-control" required />
               </div>
               <div class="mb-3">
                 <label for="correoUsuario" class="form-label">Correo</label>
-                <input type="email" id="correoUsuario" class="form-control" required />
+                <input type="email" id="correoUsuario" name="email" class="form-control" required />
               </div>
               <div class="mb-3">
                 <label for="rolUsuario" class="form-label">Rol</label>
-                <select id="rolUsuario" class="form-select select2" required>
+                <select id="rolUsuario" name="role" class="form-select select2" required>
                   <option value="">Seleccione un rol</option>
                   <option value="Admin">Admin</option>
                   <option value="Cajero">Cajero</option>
@@ -121,8 +122,8 @@
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary btn-adesco--outline" data-bs-dismiss="modal">Cancelar</button>
-              <button type="submit" class="btn btn-primary btn-adesco--outline">Guardar</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="submit" class="btn btn-primary">Guardar</button>
             </div>
           </form>
         </div>
@@ -130,11 +131,19 @@
     </main>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
-  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js" defer></script>
-  <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js" defer></script>
-  <script src="assets/js/app.js" defer></script>
-</body>
-</html>
+-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+-  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js" defer></script>
+-  <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js" defer></script>
+-  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js" defer></script>
+-  <script src="assets/js/app.js" defer></script>
+-</body>
+-</html>
++  <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
++  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
++  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js" defer></script>
++  <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js" defer></script>
++  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js" defer></script>
++  <script src="public/assets/js/app.min.js" defer></script>
++</body>
++</html>
