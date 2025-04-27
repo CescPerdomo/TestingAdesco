@@ -17,7 +17,7 @@
       <img src="public/assets/img/logo-adesco.png" alt="Logo ADESCO" class="img-fluid" style="max-height: 80px;" />
     </div>
     <form id="loginForm" method="POST" action="{{ route('login.store') }}" novalidate>
-      @csrf
+    
       <div class="mb-3">
         <label for="username" class="form-label fw-semibold">Usuario</label>
         <input type="text" id="username" name="username" class="form-control" aria-describedby="usernameError" required />
