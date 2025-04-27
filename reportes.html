@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reportes - ADESCO</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  {{-- TODO: sustituir por @csrf en Fase 2 --}}
+</head>
+<body class="d-flex flex-column vh-100" style="font-family: 'Inter', sans-serif; background-color: var(--color-background);">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="#">ADESCO</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="sidebarToggle">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Navbar content if needed -->
+      </div>
+    </div>
+  </nav>
+
+  <div class="d-flex flex-grow-1 pt-5">
+    <!-- Sidebar -->
+    <nav id="sidebar" class="bg-primary text-white p-3" style="width: 250px; min-height: calc(100vh - 56px); transition: width 0.3s ease;">
+      <ul class="nav flex-column">
+        <li class="nav-item mb-2">
+          <a href="dashboard.html" class="nav-link text-white fw-semibold"><i class="bi bi-speedometer2 me-2"></i> Dashboard</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a href="pagos.html" class="nav-link text-white fw-semibold"><i class="bi bi-wallet2 me-2"></i> Pagos & Facturas</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a href="usuarios.html" class="nav-link text-white fw-semibold"><i class="bi bi-people me-2"></i> Usuarios</a>
+        </li>
+        <li class="nav-item mb-2">
+          <a href="reportes.html" class="nav-link text-white fw-semibold active"><i class="bi bi-bar-chart-line me-2"></i> Reportes</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main content -->
+    <main class="flex-grow-1 p-4" style="overflow-y: auto;">
+      <h1 class="mb-4">Reportes</h1>
+
+      <form id="reportesForm" class="row g-3 align-items-center mb-3" aria-label="Selector de rango de fechas para reportes">
+        <div class="col-auto">
+          <label for="fechaInicio" class="col-form-label fw-semibold">Fecha inicio</label>
+        </div>
+        <div class="col-auto">
+          <input type="date" id="fechaInicio" class="form-control" required />
+        </div>
+        <div class="col-auto">
+          <label for="fechaFin" class="col-form-label fw-semibold">Fecha fin</label>
+        </div>
+        <div class="col-auto">
+          <input type="date" id="fechaFin" class="form-control" required />
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary btn-adesco--outline">Exportar CSV</button>
+        </div>
+        <div class="col-auto">
+          <button type="button" class="btn btn-primary btn-adesco--outline" id="exportPdfBtn">Exportar PDF</button>
+        </div>
+      </form>
+
+      <table id="reportesTable" class="table table-striped datatable" style="width:100%">
+        <thead>
+          <tr>
+            <th>Tipo</th>
+            <th>Descripción</th>
+            <th>Fecha</th>
+            <th>Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pago</td>
+            <td>Pago recibido de Juan Pérez</td>
+            <td>2024-06-01</td>
+            <td>$50.00</td>
+          </tr>
+          <tr>
+            <td>Factura</td>
+            <td>Factura emitida a María López</td>
+            <td>2024-06-02</td>
+            <td>$75.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js" defer></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>
