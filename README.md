@@ -9,7 +9,15 @@
 3. Opciones de despliegue como los siguientes comandos para iniciar un servidor local en el puerto 8000:
 
 ```bash
+**********************************
+Procedimiento solo para NodeJs
+Instalacion de nodejs : Windows 10/11
+en shell : winget install OpenJS.NodeJS.LTS + enter
+Luego para comprobar instalacion : node -v  (debería mostrar v22 o mayor (o la LTS del momento) o npm -v debería mostrar 10 o mayor)
+en shell (como admin) : ejecuta : cd "elDirectorioraizdelproyecto" y enter, luego ejecutar los demas comandos
 Nodejs : npx http-server -p 8000 o npx serve -l 8000 o tambien npx live-server --port=8000 luego abre http://localhost:8000
+Con Package.json (si esta declarado 'star' : entonces, npm start+enter en shell (como administrador) 
+***********************************
 PhP : php -S 0.0.0.0:8000
 El Snippet de PowerShell de Windows : Start-Process powershell -ArgumentList Start-WebServer 8000
 GitHub Pages
