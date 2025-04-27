@@ -6,9 +6,14 @@
 
 2. En la terminal, navega a la carpeta raíz del proyecto donde están los archivos HTML.
 
-3. Ejecuta el siguiente comando para iniciar un servidor local en el puerto 8000:
+3. Opciones de despliegue como el siguiente comando para iniciar un servidor local en el puerto 8000:
 
 ```bash
+Nodejs : npx http-server -p 8000 o npx serve -l 8000 o tambien npx live-server --port=8000 luego abre http://localhost:8000
+PhP : php -S 0.0.0.0:8000
+El Snippet de PowerShell de Windows : Start-Process powershell -ArgumentList Start-WebServer 8000
+GitHub Pages
+Live Server VSCode
 python3 -m http.server 8000
 ```
 
